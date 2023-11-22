@@ -26,6 +26,8 @@ function send_login(username, password) {
 
 // Probably shouldn't have the function that confirms the login, on client side 
 // to prevent people from just calling the function manually and basiclly bypassing login right?
+// Should also add encryption and other safety mesures to login 
+// Should also not commit the accounts.json file in the future to prevent anyone finding it and logging in with any account
 socket.on('login_confirm', () => {
     window.location.href = "http://localhost:3000/grade";
 })
