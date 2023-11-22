@@ -8,6 +8,11 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIO(server);
 
+// Modules
+const login = require('./server-scripts/login'); // Import the entire login.js module
+
+
+
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -24,6 +29,8 @@ app.get('/class', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'class.html'));
 });
 
+
+
 // Set up a connection event
 io.on('connection', (socket) => {
   console.log('A user connected');
@@ -33,8 +40,17 @@ io.on('connection', (socket) => {
     console.log('User disconnected');
   });
 
-  // Rest of code...
+
+
+  // Login Information Check
+  socket.on('login', (data) => {
+    if (login.check(data.username, data.password) == true) {
+      socket.emit('login_confirm');
+    }
+  })
 });
+
+
 
 // Start the server
 const PORT = process.env.PORT || 3000;

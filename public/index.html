@@ -4,8 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+
+    <link href="styles/general-animations.css" rel="stylesheet" type="text/css" />
+    <link href="styles/login.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
 </head>
 <body>
-    <h1>Login!</h1>
+    <div class="container">
+        <!-- Heading -->
+        <h1>Login</h1>
+
+        <!-- Password and Username inputs -->
+        <div class="input-fields">
+            <div class="field">
+                <input class="username"  placeholder="enter your username">
+            </div>
+
+            <div class="field">
+                <input type="password" class="password" placeholder="enter your password">
+            </div>
+        </div>
+
+        <!-- Continue button - submit login details -->
+        <div class="button-field">
+            <button class="btn-continue">continue</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts/login.js"></script>
 </body>
 </html>

@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    box-sizing: border-box;
+
+    font-family: 'Poppins', sans-serif;;
+
+    color: #000;
+
+    margin: 0;
+
+    padding: 0;
+
+    border: 0;
+
+    outline: 0;
+}
+
+
+/* Variables */
+:root {
+    /* body */
+    --body-bg-color: #ECE3CE;
+
+    /* container */
+    --container-bg-color: #fff;
+
+    /* Components (input, buttons, ...) */
+    --components-color-1: #739072;
+    --components-color-2: #4F6F52;
+
+    /* Shadows */
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --container-shadow: 5px 5px 15px 2px var(--shadow-color);
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+
+    background-color: var(--body-bg-color);
+}
+
+
+/* --- Login --- */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transform: scale3d(1.1, 1.1, 1.1);
+
+    opacity: 0;
+
+    padding: 2em;
+
+    border-radius: 1.5rem;
+
+    background-color: var(--container-bg-color);
+
+    box-shadow: var(--container-shadow);
+
+    -webkit-animation: appear 500ms 1s ease-out forwards;
+    animation: appear 500ms 1s ease-out forwards;
+}
+
+
+/* Input Fields */
+.input-fields {
+    margin: 1em 0px;
+}
+
+.input-fields h2 {
+    font-size: large;
+
+    line-height: 1;
+}
+
+.input-fields input {
+    text-align: center;
+
+    font-weight: 500;
+
+    margin: 0.5em 0em;
+
+    padding: 0.5em;
+
+    border: solid 2px var(--components-color-1);
+    border-radius: 10rem;
+
+    background: none;
+}
+
+.input-fields input::placeholder {
+    color: #000;
+}
+
+
+/* Buttons */
+.button-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-continue {
+    aspect-ratio: 4;
+
+    color: #fff;
+
+    padding: 1em;
+
+    border-radius: 10rem;
+
+    background-color: var(--components-color-1);
+}
+
+.btn-continue:active {
+    background-color: var(--components-color-2);
+}
